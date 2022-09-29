@@ -2,8 +2,9 @@ import React from 'react';
 import "./Activities.css";
 
 const Activities = (props) => {
-    console.log(props.activity)
+    // console.log(props.activity)
     const { img, title, duration } = props.activity;
+    const { eventHandler, activity } = props;
 
 
     return (
@@ -15,7 +16,7 @@ const Activities = (props) => {
                     <h5>Time Required : {duration}</h5>
                 </div>
                 <div className="card-footer">
-                    <button className='btn btn-primary w-100'>Add to list</button>
+                    <button onClick={() => eventHandler(activity)} className='btn btn-primary w-100'>Add to list</button>
                 </div>
             </div>
         </div>

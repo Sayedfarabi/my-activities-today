@@ -4,12 +4,18 @@ import Header from '../../components/header/Header';
 
 const Main = () => {
     const [activities, setActivities] = useState([]);
+    const [summery, setSummery] = useState([]);
 
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setActivities(data))
     }, [])
+
+    const addToListHandler = (activity) => {
+        setSummery(activity);
+        console.log(summery);
+    }
 
     return (
         <div className='row'>
@@ -21,6 +27,7 @@ const Main = () => {
                         activities.map(activity => <Activities
                             key={activity.id}
                             activity={activity}
+                            eventHandler={addToListHandler}
                         ></Activities>)
                     }
                 </div>
