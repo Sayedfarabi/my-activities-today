@@ -3,6 +3,7 @@ import Activities from '../activities/Activities';
 import Header from '../../components/header/Header';
 import image from '../../said.jpg';
 import Info from '../my-info/Info';
+import Break from '../break/Break';
 
 const Main = () => {
     const [activities, setActivities] = useState([]);
@@ -20,6 +21,8 @@ const Main = () => {
     }
 
     return (
+
+        // Activities Section 
         <div className='row'>
             <div className='col-md-8 m-3'>
                 <Header></Header>
@@ -35,17 +38,18 @@ const Main = () => {
                 </div>
             </div>
 
+            {/* Activities Summery Section  */}
             <div className='col-md-3 shadow'>
                 <div className='row m-3'>
                     <div className='col-sm-3 col-md-4'>
-                        <img className='w-75 h-75 rounded' src={image} alt="My pic" />
+                        <img className='w-75 h-75 rounded-circle' src={image} alt="My pic" />
                     </div>
                     <div className='col-sm-9 col-md-8'>
                         <h5>Sayed Hasan Farabi</h5>
                         <address>Dhaka, Bangladesh</address>
                     </div>
                 </div>
-                <div className='d-flex justify-content-between mx-3'>
+                <div className='d-flex justify-content-between mx-3 bg-light'>
                     <Info
                         name={"Weight"}
                         value={"60"}
@@ -53,18 +57,26 @@ const Main = () => {
                     </Info>
 
                     <Info
-                        name={"Weight"}
-                        value={"60"}
-                        category={"kg"}>
+                        name={"Height"}
+                        value={"5.4"}
+                        category={"ft"}>
                     </Info>
 
                     <Info
-                        name={"Weight"}
-                        value={"60"}
-                        category={"kg"}>
+                        name={"Age"}
+                        value={"24"}
+                        category={"yrs"}>
                     </Info>
-
-
+                </div>
+                <div>
+                    <h5>Add a Break</h5>
+                    <div className='d-flex justify-content-between align-items-center mx-3'>
+                        <Break time={30}></Break>
+                        <Break time={60}></Break>
+                        <Break time={75}></Break>
+                        <Break time={90}></Break>
+                        <Break time={120}></Break>
+                    </div>
                 </div>
             </div>
         </div>
