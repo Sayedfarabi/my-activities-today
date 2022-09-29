@@ -4,6 +4,7 @@ import Header from '../../components/header/Header';
 import image from '../../said.jpg';
 import Info from '../my-info/Info';
 import Break from '../break/Break';
+import Details from '../details/Details';
 
 const Main = () => {
     const [activities, setActivities] = useState([]);
@@ -78,7 +79,17 @@ const Main = () => {
                         <Break time={120}></Break>
                     </div>
                 </div>
-
+                <div className='mt-5'>
+                    <h5>Activity Details :</h5>
+                    <div>
+                        <Details
+                            name={"Activities Time"}
+                            value={0}></Details>
+                        <Details
+                            name={"Break Time"}
+                            value={0}></Details>
+                    </div>
+                </div>
             </div>
         </div>
     );
