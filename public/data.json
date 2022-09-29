@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "I will be fresh in the morning",
+        "img": "https://c8.alamy.com/comp/2DDR9PR/happy-young-man-with-bristles-holding-a-brush-and-a-tube-of-toothpaste-brushing-his-teeth-immediately-after-waking-up-hygiene-morning-routine-and-2DDR9PR.jpg",
+        "duration": 30
+    },
+    {
+        "id": 2,
+        "title": "I will be exercise in the morning",
+        "img": "https://c8.alamy.com/comp/TC83WM/handsome-man-running-on-treadmill-at-gym-TC83WM.jpg",
+        "duration": 40
+    },
+    {
+        "id": 3,
+        "title": "I will have breakfast",
+        "img": "https://thumbs.dreamstime.com/z/portrait-handsome-young-man-having-breakfast-watching-movie-laptop-computer-sitting-table-home-117214901.jpg",
+        "duration": 20
+    },
+    {
+        "id": 4,
+        "title": "I will study at morning",
+        "img": "https://image.shutterstock.com/image-photo/young-man-writing-book-while-260nw-359963765.jpg",
+        "duration": 60
+    },
+    {
+        "id": 5,
+        "title": "I will take classes at school",
+        "img": "https://image.shutterstock.com/image-photo/group-caucasian-high-school-students-260nw-704245258.jpg",
+        "duration": 180
+    },
+    {
+        "id": 6,
+        "title": "I will eat lunch",
+        "img": "https://thumbs.dreamstime.com/b/young-man-having-lunch-cafe-serious-delighted-handsome-guy-looking-camera-holding-cup-warm-tea-82627156.jpg",
+        "duration": 25
+    },
+    {
+        "id": 7,
+        "title": "I will sleep in the afternoon",
+        "img": "https://share.baptisthealth.com/wp-content/uploads/2013/09/man-sleeping.jpg",
+        "duration": 120
+    },
+    {
+        "id": 8,
+        "title": "I will play cricket in the afternoon",
+        "img": "https://thumbs.dreamstime.com/b/fine-shot-village-cricket-match-hot-summers-day-county-surrey-uk-scene-can-be-seen-across-157154373.jpg",
+        "duration": 90
+    },
+    {
+        "id": 9,
+        "title": "I will pray Maghrib",
+        "img": "https://st4.depositphotos.com/3591429/20920/i/600/depositphotos_209201684-stock-photo-muslim-prayers-sujud-posture.jpg",
+        "duration": 20
+    },
+    {
+        "id": 10,
+        "title": "I will study at nignt",
+        "img": "https://thumbs.dreamstime.com/b/smart-man-studying-night-confident-young-late-sitting-desk-reading-book-knowledge-learning-concept-78051825.jpg",
+        "duration": 120
+    },
+    {
+        "id": 11,
+        "title": "I will watch TV at night",
+        "img": "https://s3.envato.com/files/273118399/domMar06.jpg",
+        "duration": 75
+    },
+    {
+        "id": 12,
+        "title": "I will sleep at night",
+        "img": "https://as2.ftcdn.net/v2/jpg/02/90/56/13/1000_F_290561381_88AK2xT0z4WO4KS9z3hVbcguuDhyyFCx.jpg",
+        "duration": 480
+    }
+]
