@@ -8,10 +8,10 @@ import Details from '../details/Details';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocation, faLocationPin, faMapLocation } from '@fortawesome/free-solid-svg-icons';
 
+
 const Main = () => {
     const [activities, setActivities] = useState([]);
     const [selectedLists, setSelectedLists] = useState([]);
-    let minutes = 0;
 
     useEffect(() => {
         fetch('data.json')
@@ -22,10 +22,7 @@ const Main = () => {
     const addToListHandler = (activity) => {
         const newSelectedLists = [...selectedLists, activity];
         setSelectedLists(newSelectedLists);
-        // console.log(selectedLists.length);
-        selectedLists.map(selectedList => minutes += selectedList.duration);
-        console.log(minutes);
-    }
+    };
 
     return (
 
@@ -46,7 +43,7 @@ const Main = () => {
             </div>
 
             {/* Activities Summery Section  */}
-            <div className='col-md-3 shadow'>
+            <div className='col-md-3 shadow summery'>
                 <div className='row m-3'>
                     <div className='col-sm-3 col-md-4'>
                         <img className='w-75 h-75 rounded-circle' src={image} alt="My pic" />
@@ -99,10 +96,10 @@ const Main = () => {
                     <div>
                         <Details
                             name={"Activities Time"}
-                            value={minutes}></Details>
+                            value={0}></Details>
                         <Details
                             name={"Break Time"}
-                            value={minutes}></Details>
+                            value={0}></Details>
                     </div>
                 </div>
 
