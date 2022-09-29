@@ -5,6 +5,8 @@ import image from '../../said.jpg';
 import Info from '../my-info/Info';
 import Break from '../break/Break';
 import Details from '../details/Details';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocation, faLocationPin, faMapLocation } from '@fortawesome/free-solid-svg-icons';
 
 const Main = () => {
     const [activities, setActivities] = useState([]);
@@ -47,10 +49,10 @@ const Main = () => {
                     </div>
                     <div className='col-sm-9 col-md-8'>
                         <h5>Sayed Hasan Farabi</h5>
-                        <address>Dhaka, Bangladesh</address>
+                        <address><FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon> Dhaka, Bangladesh</address>
                     </div>
                 </div>
-                <div className='d-flex justify-content-between mx-3 bg-light'>
+                <div className='d-flex justify-content-between bg-light'>
                     <Info
                         name={"Weight"}
                         value={"60"}
@@ -89,6 +91,9 @@ const Main = () => {
                             name={"Break Time"}
                             value={0}></Details>
                     </div>
+                </div>
+                <div className='mt-5'>
+                    <button className='btn btn-primary w-100'>Activity Completed</button>
                 </div>
             </div>
         </div>
