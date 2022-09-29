@@ -68,9 +68,9 @@ const Main = () => {
                         category={"yrs"}>
                     </Info>
                 </div>
-                <div>
-                    <h5>Add a Break</h5>
-                    <div className='d-flex justify-content-between align-items-center mx-3'>
+                <div className='mt-5'>
+                    <h5>Add a Break :</h5>
+                    <div className='bg-light d-flex justify-content-between align-items-center p-3 rounded'>
                         <Break time={30}></Break>
                         <Break time={60}></Break>
                         <Break time={75}></Break>
@@ -78,6 +78,7 @@ const Main = () => {
                         <Break time={120}></Break>
                     </div>
                 </div>
+
             </div>
         </div>
     );

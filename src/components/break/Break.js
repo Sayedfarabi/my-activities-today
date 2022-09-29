@@ -1,10 +1,11 @@
 import React from 'react';
+import './Break.css';
 
 const Break = (props) => {
     return (
-        <div className='bg-light rounded-circle p-2'>
+        <button className='btn btn-primary rounded-circle p-2 me-2'>
             <p>{props.time}m</p>
-        </div>
+        </button>
     );
 };
 
