@@ -10,7 +10,8 @@ import { faLocation, faLocationPin, faMapLocation } from '@fortawesome/free-soli
 
 const Main = () => {
     const [activities, setActivities] = useState([]);
-    const [summery, setSummery] = useState([]);
+    const [selectedLists, setSelectedLists] = useState([]);
+    let minutes = 0;
 
     useEffect(() => {
         fetch('data.json')
@@ -19,8 +20,11 @@ const Main = () => {
     }, [])
 
     const addToListHandler = (activity) => {
-        setSummery(activity);
-        console.log(summery);
+        const newSelectedLists = [...selectedLists, activity];
+        setSelectedLists(newSelectedLists);
+        // console.log(selectedLists.length);
+        selectedLists.map(selectedList => minutes += selectedList.duration);
+        console.log(minutes);
     }
 
     return (
@@ -52,6 +56,9 @@ const Main = () => {
                         <address><FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon> Dhaka, Bangladesh</address>
                     </div>
                 </div>
+
+                {/* Profile Info Section  */}
+
                 <div className='d-flex justify-content-between bg-light'>
                     <Info
                         name={"Weight"}
@@ -71,6 +78,9 @@ const Main = () => {
                         category={"yrs"}>
                     </Info>
                 </div>
+
+                {/* Add Break Section  */}
+
                 <div className='mt-5'>
                     <h5>Add a Break :</h5>
                     <div className='bg-light d-flex justify-content-between align-items-center p-3 rounded'>
@@ -81,17 +91,23 @@ const Main = () => {
                         <Break time={120}></Break>
                     </div>
                 </div>
+
+                {/* Activities Details Section  */}
+
                 <div className='mt-5'>
                     <h5>Activity Details :</h5>
                     <div>
                         <Details
                             name={"Activities Time"}
-                            value={0}></Details>
+                            value={minutes}></Details>
                         <Details
                             name={"Break Time"}
-                            value={0}></Details>
+                            value={minutes}></Details>
                     </div>
                 </div>
+
+                {/* Complated button section  */}
+
                 <div className='mt-5'>
                     <button className='btn btn-primary w-100'>Activity Completed</button>
                 </div>
