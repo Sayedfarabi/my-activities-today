@@ -53,7 +53,7 @@ const Main = () => {
             <div className='col-md-8 m-3'>
                 <Header></Header>
                 <h3 className='my-2 py-2 bg-secondary text-center text-white'>Select Today Activities :</h3>
-                <div className="row row-cols-1 row-cols-md-3 mt-3 g-4">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-3 g-4">
                     {
                         activities.map(activity => <Activities
                             key={activity.id}
@@ -67,11 +67,11 @@ const Main = () => {
             {/* Activities Summery Section  */}
             <div className='col-md-3 shadow summery'>
                 <div className='row p-3 bg-secondary text-white'>
-                    <div className='col-sm-3 col-md-4'>
+                    <div className='col-sm-12 text-center col-md-4'>
                         <img className='w-75 h-75 rounded-circle' src={image} alt="My pic" />
                     </div>
-                    <div className='col-sm-9 col-md-8'>
-                        <h5>Sayed Hasan Farabi</h5>
+                    <div className='col-sm-12 text-center col-md-8'>
+                        <h4>Sayed Hasan Farabi</h4>
                         <address><FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon> Dhaka, Bangladesh</address>
                     </div>
                 </div>
