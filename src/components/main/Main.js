@@ -37,7 +37,6 @@ const Main = () => {
     }
     addToDb(minutes)
 
-
     const breakTimeHandler = time => {
         setBreakTimes(time)
     }
@@ -48,14 +47,12 @@ const Main = () => {
 
     }, [minutes]);
 
-
     return (
-
         // Activities Section 
         <div className='row'>
             <div className='col-md-8 m-3'>
                 <Header></Header>
-                <h3 className='my-2'>Select today activities :</h3>
+                <h3 className='my-2 py-2 bg-secondary text-center text-white'>Select Today Activities :</h3>
                 <div className="row row-cols-1 row-cols-md-3 mt-3 g-4">
                     {
                         activities.map(activity => <Activities
@@ -69,7 +66,7 @@ const Main = () => {
 
             {/* Activities Summery Section  */}
             <div className='col-md-3 shadow summery'>
-                <div className='row m-3'>
+                <div className='row p-3 bg-secondary text-white'>
                     <div className='col-sm-3 col-md-4'>
                         <img className='w-75 h-75 rounded-circle' src={image} alt="My pic" />
                     </div>
@@ -104,7 +101,7 @@ const Main = () => {
                 {/* Add Break Section  */}
 
                 <div className='mt-5'>
-                    <h5>Add a Break :</h5>
+                    <h5 className='bg-secondary text-white py-3 text-center'>Add a Break :</h5>
                     <div className='bg-light d-flex justify-content-between align-items-center p-3 rounded'>
                         <Break time={30} timeHandler={breakTimeHandler}></Break>
                         <Break time={60} timeHandler={breakTimeHandler}></Break>
@@ -117,7 +114,7 @@ const Main = () => {
                 {/* Activities Details Section  */}
 
                 <div className='mt-5'>
-                    <h5>Activity Details :</h5>
+                    <h5 className='bg-secondary text-white py-3 text-center'>Activity Details :</h5>
                     <div>
                         <Details
                             name={"Activities Time"}
@@ -130,7 +127,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                {/* Complated button section  */}
+                {/* Completed button section  */}
 
                 <div className='mt-5'>
                     <button onClick={toastsHandler} className='btn btn-primary w-100'>Activity Completed</button>

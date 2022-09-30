@@ -4,12 +4,12 @@ import { faTasks } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
-        <div className='d-flex text-primary'>
+        <div className='d-flex justify-content-center text-warning bg-dark fw-bolder py-4'>
             <div className='me-3'>
-                <h2><FontAwesomeIcon icon={faTasks}></FontAwesomeIcon></h2>
+                <h1><FontAwesomeIcon icon={faTasks}></FontAwesomeIcon></h1>
             </div>
             <div>
-                <h2>MY-ACTIVITIES-OF-TODAY</h2>
+                <h1>MY-ACTIVITIES-OF-TODAY</h1>
             </div>
         </div>
     );
