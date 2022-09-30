@@ -3,8 +3,10 @@ import "./Activities.css";
 
 const Activities = (props) => {
     // console.log(props.activity)
-    const { img, title, duration } = props.activity;
-    const { eventHandler, activity } = props;
+    const { addToList, activity } = props;
+    const { img, title, duration } = activity;
+    // let minutes = 0;
+
 
 
     return (
@@ -16,7 +18,7 @@ const Activities = (props) => {
                     <h5>Time Required : {duration}</h5>
                 </div>
                 <div className="card-footer">
-                    <button onClick={() => eventHandler(activity)} className='btn btn-primary w-100'>Add to list</button>
+                    <button onClick={() => addToList(duration)} className='btn btn-primary w-100'>Add to list</button>
                 </div>
             </div>
         </div>

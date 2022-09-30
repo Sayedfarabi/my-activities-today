@@ -6,12 +6,16 @@ import Info from '../my-info/Info';
 import Break from '../break/Break';
 import Details from '../details/Details';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocation, faLocationPin, faMapLocation } from '@fortawesome/free-solid-svg-icons';
+import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
+import { addToDb, getFromDb } from '../database/addToDb';
 
 
 const Main = () => {
+
     const [activities, setActivities] = useState([]);
-    const [selectedLists, setSelectedLists] = useState([]);
+    const [minutes, setMinutes] = useState([]);
+    const [activitiesTime, setActivitiesTime] = useState(0);
+
 
     useEffect(() => {
         fetch('data.json')
@@ -19,10 +23,18 @@ const Main = () => {
             .then(data => setActivities(data))
     }, [])
 
-    const addToListHandler = (activity) => {
-        const newSelectedLists = [...selectedLists, activity];
-        setSelectedLists(newSelectedLists);
-    };
+    const addToList = duration => {
+        const newMinutes = [...minutes, duration];
+        setMinutes(newMinutes);
+    }
+    addToDb(minutes)
+
+    useEffect(() => {
+        const totalTime = getFromDb();
+        setActivitiesTime(totalTime);
+
+    }, [minutes]);
+
 
     return (
 
@@ -36,7 +48,7 @@ const Main = () => {
                         activities.map(activity => <Activities
                             key={activity.id}
                             activity={activity}
-                            eventHandler={addToListHandler}
+                            addToList={addToList}
                         ></Activities>)
                     }
                 </div>
@@ -96,10 +108,12 @@ const Main = () => {
                     <div>
                         <Details
                             name={"Activities Time"}
-                            value={0}></Details>
+                            value={activitiesTime}></Details>
                         <Details
                             name={"Break Time"}
                             value={0}></Details>
+                        {/* <Details
+                            value={activitiesTime}></Details> */}
                     </div>
                 </div>
 
