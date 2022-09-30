@@ -10,10 +10,13 @@ import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
 import { addToDb, getFromDb } from '../database/addToDb';
 
 
+
+
 const Main = () => {
 
     const [activities, setActivities] = useState([]);
-    const [minutes, setMinutes] = useState([]);
+    const [minutes, setMinutes] = useState(0);
+    const [breakTimes, setBreakTimes] = useState(0);
     const [activitiesTime, setActivitiesTime] = useState(0);
 
 
@@ -23,11 +26,21 @@ const Main = () => {
             .then(data => setActivities(data))
     }, [])
 
+    const toastsHandler = () => {
+        alert(" 'Congratulations' You are Done with your activities")
+    }
+
     const addToList = duration => {
-        const newMinutes = [...minutes, duration];
+        const newMinutes = minutes + duration;
         setMinutes(newMinutes);
+        // setMinutes(duration);
     }
     addToDb(minutes)
+
+
+    const breakTimeHandler = time => {
+        setBreakTimes(time)
+    }
 
     useEffect(() => {
         const totalTime = getFromDb();
@@ -93,11 +106,11 @@ const Main = () => {
                 <div className='mt-5'>
                     <h5>Add a Break :</h5>
                     <div className='bg-light d-flex justify-content-between align-items-center p-3 rounded'>
-                        <Break time={30}></Break>
-                        <Break time={60}></Break>
-                        <Break time={75}></Break>
-                        <Break time={90}></Break>
-                        <Break time={120}></Break>
+                        <Break time={30} timeHandler={breakTimeHandler}></Break>
+                        <Break time={60} timeHandler={breakTimeHandler}></Break>
+                        <Break time={75} timeHandler={breakTimeHandler}></Break>
+                        <Break time={90} timeHandler={breakTimeHandler}></Break>
+                        <Break time={120} timeHandler={breakTimeHandler}></Break>
                     </div>
                 </div>
 
@@ -111,7 +124,7 @@ const Main = () => {
                             value={activitiesTime}></Details>
                         <Details
                             name={"Break Time"}
-                            value={0}></Details>
+                            value={breakTimes}></Details>
                         {/* <Details
                             value={activitiesTime}></Details> */}
                     </div>
@@ -120,7 +133,7 @@ const Main = () => {
                 {/* Complated button section  */}
 
                 <div className='mt-5'>
-                    <button className='btn btn-primary w-100'>Activity Completed</button>
+                    <button onClick={toastsHandler} className='btn btn-primary w-100'>Activity Completed</button>
                 </div>
             </div>
         </div>
