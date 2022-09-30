@@ -1,9 +1,9 @@
 const addToDb = minutes => {
-    localStorage.setItem("Activities-Time", minutes);
+    localStorage.setItem("Break-Time", minutes);
 }
 
 const getFromDb = () => {
-    const getTime = localStorage.getItem("Activities-Time");
+    const getTime = localStorage.getItem("Break-Time");
     const storedTime = JSON.parse(getTime);
     return storedTime
 }

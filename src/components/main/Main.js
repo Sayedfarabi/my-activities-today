@@ -16,8 +16,8 @@ const Main = () => {
 
     const [activities, setActivities] = useState([]);
     const [minutes, setMinutes] = useState(0);
+    const [lsBreakTimes, setLsBreakTimes] = useState(0);
     const [breakTimes, setBreakTimes] = useState(0);
-    const [activitiesTime, setActivitiesTime] = useState(0);
 
 
     useEffect(() => {
@@ -35,17 +35,16 @@ const Main = () => {
         setMinutes(newMinutes);
         // setMinutes(duration);
     }
-    addToDb(minutes)
+    addToDb(lsBreakTimes)
 
     const breakTimeHandler = time => {
-        setBreakTimes(time)
+        setLsBreakTimes(time)
     }
 
     useEffect(() => {
         const totalTime = getFromDb();
-        setActivitiesTime(totalTime);
-
-    }, [minutes]);
+        setBreakTimes(totalTime);
+    }, [lsBreakTimes]);
 
     return (
         // Activities Section 
@@ -118,7 +117,7 @@ const Main = () => {
                     <div>
                         <Details
                             name={"Activities Time"}
-                            value={activitiesTime}></Details>
+                            value={minutes}></Details>
                         <Details
                             name={"Break Time"}
                             value={breakTimes}></Details>
